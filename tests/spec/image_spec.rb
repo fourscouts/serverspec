@@ -16,8 +16,8 @@ describe "The Docker image built by" do
       expect(@image.json['ContainerConfig']['ExposedPorts']).to match(nil)
     end
 
-    it 'should not declare volumes' do
-      expect(@image.json['ContainerConfig']['Volumes']).to match(nil)
+    it 'should have /config as volume' do
+      expect(@image.json['ContainerConfig']['Volumes']).to include('/projectfiles')
     end
   end
 

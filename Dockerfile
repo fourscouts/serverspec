@@ -13,6 +13,9 @@ RUN apk add --update-cache \
 RUN gem install serverspec -v "${SERVERSPEC_VERSION}"
 RUN gem install docker-api -v "${DOCKERAPI_VERSION}"
 
+RUN mkdir /projectfiles
+VOLUME /projectfiles
+
 WORKDIR /projectfiles/tests
 
-CMD ["rake", "--silent", "--quiet"]
+CMD rake --silent --quiet
