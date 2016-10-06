@@ -7,7 +7,7 @@ build:
 	docker build -t $(DOCKER_IMAGE) $(CURDIR)
 
 push:
-	docker push $(DOCKER_IMAGE):$(DOCKER_IMAGE)
+	docker push $(DOCKER_IMAGE):$(DOCKER_TAG)
 
 test:
 	@echo "linting the Dockerfile"
