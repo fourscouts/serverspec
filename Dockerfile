@@ -16,6 +16,6 @@ RUN gem install docker-api -v "${DOCKERAPI_VERSION}"
 RUN mkdir /projectfiles
 VOLUME /projectfiles
 
-WORKDIR /projectfiles/tests
+WORKDIR /projectfiles
 
-CMD rake --silent --quiet
+CMD cd tests; rake --silent --quiet
