@@ -14,8 +14,6 @@ RUN gem install serverspec -v "${SERVERSPEC_VERSION}"
 RUN gem install docker-api -v "${DOCKERAPI_VERSION}"
 
 RUN mkdir /projectfiles
-VOLUME /projectfiles
-
 WORKDIR /projectfiles
 
 CMD cd tests; rake --silent --quiet
