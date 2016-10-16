@@ -1,5 +1,5 @@
 FROM ruby:2.3-alpine
-MAINTAINER make.io <mtishauser@make.io>
+MAINTAINER make.io <info@make.io>
 
 ENV SERVERSPEC_VERSION=2.36.1
 ENV DOCKERAPI_VERSION=1.32.0
