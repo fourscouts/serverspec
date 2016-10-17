@@ -9,8 +9,11 @@ build:
 push:
 	docker push $(DOCKER_IMAGE):$(DOCKER_TAG)
 
+lint:
+	@echo "start linting the Dockerfile"
+	@docker run --rm -i fourstacks/hadolint hadolint --ignore DL3008 --ignore DL3013 - < Dockerfile
+	@echo "finished linting the Dockerfile"
+
 test:
-	@echo "linting the Dockerfile"
-	@docker run --rm -i lukasmartinelli/hadolint hadolint --ignore DL3008 --ignore DL3013 - < Dockerfile
 	@echo "running serverspec tests on the Dockerfile"
 	@docker run -it -v "/var/run/docker.sock:/var/run/docker.sock" -v "$(PWD):/projectfiles" $(DOCKER_IMAGE)

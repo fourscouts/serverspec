@@ -1,17 +1,16 @@
 FROM ruby:2.3-alpine
 MAINTAINER make.io <info@make.io>
 
-ENV SERVERSPEC_VERSION=2.36.1
-ENV DOCKERAPI_VERSION=1.32.0
-
 RUN apk add --update-cache \
+    build-base \
     bash \
     curl && \
     rm -rf /var/cache/apk/*
 
+COPY Gemfile /tmp
+COPY Gemfile.lock /tmp
 
-RUN gem install serverspec -v "${SERVERSPEC_VERSION}"
-RUN gem install docker-api -v "${DOCKERAPI_VERSION}"
+RUN cd /tmp && bundle install
 
 RUN mkdir /projectfiles
 WORKDIR /projectfiles
