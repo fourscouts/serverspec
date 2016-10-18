@@ -37,6 +37,7 @@ GEM
       rspec-its
       specinfra (~> 2.53)
     sfl (2.3)
+    should_not (1.1.0)
     specinfra (2.63.3)
       net-scp
       net-ssh (>= 2.7, < 4.0)
@@ -51,6 +52,7 @@ DEPENDENCIES
   rhcl (~> 0.1.0)
   rspec (~> 3.5.0)
   serverspec (~> 2.37.2)
+  should_not
 
 BUNDLED WITH
    1.13.4
