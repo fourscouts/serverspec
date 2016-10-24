@@ -22,7 +22,7 @@ tests
 The command for running the tests is:
 
 ```
-docker run -it -v "/var/run/docker.sock:/var/run/docker.sock" -v "$(PWD):/projectfiles" fourstacks/serverspec
+docker run -it -v "/var/run/docker.sock:/var/run/docker.sock" -v "$(PWD):/projectfiles" fourstacks/serverspec rake
 ```
 
 
