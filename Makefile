@@ -17,3 +17,6 @@ lint:
 test:
 	@echo "running serverspec tests on the Dockerfile"
 	@docker run -it -v "/var/run/docker.sock:/var/run/docker.sock" -v "$(PWD):/projectfiles" $(DOCKER_IMAGE)
+
+shell:
+	@docker run -it -v "/var/run/docker.sock:/var/run/docker.sock" -v "$(PWD):/projectfiles" $(DOCKER_IMAGE) bash
