@@ -35,6 +35,8 @@ describe "Container" do
         build-base
         bash
         curl
+        ruby
+        ruby-dev
     )
 
     requiredPackages.each { |apkPackage|
