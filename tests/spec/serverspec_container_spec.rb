@@ -43,7 +43,6 @@ describe "Container" do
       end
     }
 
-
     after(:all) do
       @container.kill
       @container.delete(:force => true)
