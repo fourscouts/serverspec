@@ -13,6 +13,9 @@ GEM
     aws-sdk-resources (2.6.12)
       aws-sdk-core (= 2.6.12)
     aws_config (0.0.4)
+    awsecrets (0.2.0)
+      aws-sdk (~> 2.1)
+      aws_config
     awspec (0.22.1)
       activesupport
       aws-sdk (~> 2.1)
@@ -80,6 +83,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awsecrets (~> 0.2.0)
   awspec (~> 0.22.0)
   docker-api (~> 1.32.1)
   rake
