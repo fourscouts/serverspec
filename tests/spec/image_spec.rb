@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "The Docker image built by" do
 
   before(:all) do
-    @image = Docker::Image.build_from_dir('../')
+    @image = Docker::Image.build_from_dir($project_root)
 
     set :docker_image, @image.id
   end

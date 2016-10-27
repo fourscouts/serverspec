@@ -7,6 +7,8 @@ set :backend, :docker
 
 $project_root = File.expand_path(File.join(__FILE__, '..', '..','..'))
 
+puts $project_root
+
 RSpec.configure do |config|
  config.color = true
  config.tty = true
