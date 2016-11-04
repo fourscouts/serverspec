@@ -6,12 +6,14 @@ ENV AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ENV AWS_REGION=ap-northeast-1
 
 ENV BUNDLER_VERSION=1.13.5
-ENV BUILD_PACKAGES="bash curl build-base ruby-dev"
-ENV RUBY_PACKAGES="ruby ruby-io-console"
 
 RUN apk add --update-cache \
-    "$BUILD_PACKAGES" \
-    "$RUBY_PACKAGES" && \
+    bash \
+    curl \
+    build-base \
+    ruby \
+    ruby-io-console \
+    ruby-dev && \
     rm -rf /var/cache/apk/*
 
 # skip installing gem documentation

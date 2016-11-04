@@ -83,6 +83,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk (~> 2)
   awsecrets (~> 0.2.0)
   awspec (~> 0.22.0)
   docker-api (~> 1.32.1)
