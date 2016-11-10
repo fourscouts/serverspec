@@ -6,15 +6,21 @@ ENV AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ENV AWS_REGION=ap-northeast-1
 
 ENV BUNDLER_VERSION=1.13.5
+ENV K8S_VERSION=1.4.5
 
 RUN apk add --update-cache \
     bash \
+    openssh \
     curl \
     build-base \
     ruby \
     ruby-io-console \
     ruby-dev && \
     rm -rf /var/cache/apk/*
+
+# add kubectl for being able to smoketest kubernetes clusters with serverspec
+RUN curl -L https://storage.googleapis.com/kubernetes-release/release/v"${K8S_VERSION}"/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl \
+  && chmod +x /usr/local/bin/kubectl
 
 # skip installing gem documentation
 RUN echo 'gem: --no-rdoc --no-ri' >> /etc/gemrc

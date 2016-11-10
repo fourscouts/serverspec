@@ -45,6 +45,11 @@ describe "Container" do
       end
     }
 
+    it "runs kubectl version 1.4.5" do
+      os_version = command('kubectl version')
+      expect(os_version.stdout).to include('1.4.5')
+    end
+
     after(:all) do
       @container.kill
       @container.delete(:force => true)
