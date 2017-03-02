@@ -20,15 +20,15 @@ describe "Container" do
     end
 
 
-    it "runs alpine version 3.4" do
+    it "runs alpine version 3.5" do
       expect(file('/etc/os-release')).to be_a_file
       os_version = command('cat /etc/os-release')
-      expect(os_version.stdout).to include('PRETTY_NAME="Alpine Linux v3.4"')
+      expect(os_version.stdout).to include('PRETTY_NAME="Alpine Linux v3.5"')
     end
 
-    it "has ruby version 2.3.1 installed" do
+    it "has ruby version 2.3.3 installed" do
       ruby_version = command('ruby -v').stdout
-      expect(ruby_version).to include('2.3.1')
+      expect(ruby_version).to include('2.3.3')
     end
 
     requiredPackages = %w(
@@ -45,9 +45,9 @@ describe "Container" do
       end
     }
 
-    it "runs kubectl version 1.4.5" do
+    it "runs kubectl version 1.5.3" do
       os_version = command('kubectl version')
-      expect(os_version.stdout).to include('1.4.5')
+      expect(os_version.stdout).to include('1.5.3')
     end
 
     after(:all) do
